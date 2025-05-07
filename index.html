@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Beautiful — Listen & Sing</title>
+  <style>
+    body {
+      background-color: #1b1b2f;
+      color: #ffffff;
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 0;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 5px;
+    }
+    h2 a {
+      color: #7ec8e3;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    audio {
+      display: block;
+      margin: 30px auto;
+    }
+    .lyrics-container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .girl-img {
+      position: absolute;
+      left: -240px;
+      top: 0;
+      width: 180px;
+    }
+    .lips {
+      position: absolute;
+      right: -200px;
+      top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 140px;
+      height: 700px;
+    }
+    .lips img {
+      width: 36px;
+      margin: 4px;
+    }
+    .line {
+      margin-bottom: 24px;
+      font-size: 1.2em;
+    }
+    .options {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-left: 10px;
+    }
+    .choice {
+      background-color: #2f2f3d;
+      color: #ffffff;
+      border: 2px solid #555;
+      border-radius: 10px;
+      padding: 6px 16px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    .choice:hover {
+      background-color: #3f3f50;
+    }
+    .choice.correct {
+      background-color: #2e7d32;
+      border-color: #2e7d32;
+    }
+    .choice.incorrect {
+      background-color: #c62828;
+      border-color: #c62828;
+    }
+    .buttons {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .buttons button {
+      background-color: pink;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Listen & Sing</h1>
+  <h2><a href="https://t.me/joinandgetinspired" target="_blank">Join&GetInspired</a></h2>
+
+  <audio controls>
+    <source src="audio.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="lyrics-container">
+    <img class="girl-img" src="girl.png" alt="girl">
+    <div class="lips">
+      <script>
+        for (let i = 0; i < 20; i++) {
+          document.write('<img src="lips.png" alt="lips">');
+        }
+      </script>
+    </div>
+    <div class="lyrics">
+<div class="line">My life is brilliant </div>
+<div class="line">My love is pure </div>
+<div class="line">I <span class="options"><span class="choice" data-correct="saw" onclick="checkChoice(this)">saw</span><span class="choice" data-correct="saw" onclick="checkChoice(this)">met</span><span class="choice" data-correct="saw" onclick="checkChoice(this)">kissed</span></span> an angel </div>
+<div class="line">Of that I'm sure </div>
+<div class="line">She smiled at me on the subway </div>
+<div class="line">She was <span class="options"><span class="choice" data-correct="with her brother" onclick="checkChoice(this)">with her brother</span><span class="choice" data-correct="with her brother" onclick="checkChoice(this)">with another man</span><span class="choice" data-correct="with her brother" onclick="checkChoice(this)">alone</span></span> </div>
+<div class="line">But I won't lose no sleep on that </div>
+<div class="line">Cause <span class="options"><span class="choice" data-correct="I don't care" onclick="checkChoice(this)">I don't care</span><span class="choice" data-correct="I don't care" onclick="checkChoice(this)">I've got a plan</span><span class="choice" data-correct="I don't care" onclick="checkChoice(this)">I'll run away</span></span> </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're <span class="options"><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">beautiful, it's true</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">perfect, it's true</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">pretty, I knew</span></span> </div>
+<div class="line">I saw your face in a crowded place </div>
+<div class="line">And <span class="options"><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I don't know what to do</span><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I wanted to kiss you</span><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I walked away</span></span> </div>
+<div class="line">'Cause I'll never be with you </div>
+<div class="line">Yes, she caught my eye </div>
+<div class="line">As I walked on by </div>
+<div class="line">She could see from my face that <span class="options"><span class="choice" data-correct="I was" onclick="checkChoice(this)">I was</span><span class="choice" data-correct="I was" onclick="checkChoice(this)">I cried</span><span class="choice" data-correct="I was" onclick="checkChoice(this)">I sighed</span></span> </div>
+<div class="line">I don't think that I'll see her again </div>
+<div class="line">But <span class="options"><span class="choice" data-correct="we shared a moment that will last till the end" onclick="checkChoice(this)">we shared a moment that will last till the end</span><span class="choice" data-correct="we shared a moment that will last till the end" onclick="checkChoice(this)">we said goodbye forever</span><span class="choice" data-correct="we shared a moment that will last till the end" onclick="checkChoice(this)">we stood in silence</span></span> </div>
+<div class="line">See James Blunt Live </div>
+<div class="line"><span class="options"><span class="choice" data-correct="Get tickets as low as $40" onclick="checkChoice(this)">Get tickets as low as $40</span><span class="choice" data-correct="Get tickets as low as $40" onclick="checkChoice(this)">Order free passes</span><span class="choice" data-correct="Get tickets as low as $40" onclick="checkChoice(this)">Buy a vinyl now</span></span> </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're <span class="options"><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">beautiful, it's true</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">brilliant, I knew</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">pretty, it's new</span></span> </div>
+<div class="line">I saw your face in a crowded place </div>
+<div class="line">And <span class="options"><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I don't know what to do</span><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I turned away from you</span><span class="choice" data-correct="I don't know what to do" onclick="checkChoice(this)">I smiled and said hello</span></span> </div>
+<div class="line">'Cause I'll never be with you </div>
+<div class="line">Ba, la, la, na </div>
+<div class="line">Ba, la, la, na </div>
+<div class="line">Ba <span class="options"><span class="choice" data-correct="la, la, na, na" onclick="checkChoice(this)">la, la, na, na</span><span class="choice" data-correct="la, la, na, na" onclick="checkChoice(this)">ba, ba, na</span><span class="choice" data-correct="la, la, na, na" onclick="checkChoice(this)">la, la, la</span></span> </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're beautiful </div>
+<div class="line">You're <span class="options"><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">beautiful, it's true</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">the one I drew</span><span class="choice" data-correct="beautiful, it's true" onclick="checkChoice(this)">my dream come true</span></span> </div>
+<div class="line">There must be an angel with a smile on her face </div>
+<div class="line">When <span class="options"><span class="choice" data-correct="she thought up that I should be with you" onclick="checkChoice(this)">she thought up that I should be with you</span><span class="choice" data-correct="she thought up that I should be with you" onclick="checkChoice(this)">I tried to talk to you</span><span class="choice" data-correct="she thought up that I should be with you" onclick="checkChoice(this)">she smiled and said thank you</span></span> </div>
+<div class="line">But it's time to face the truth </div>
+<div class="line">I <span class="options"><span class="choice" data-correct="will never be with you" onclick="checkChoice(this)">will never be with you</span><span class="choice" data-correct="will never be with you" onclick="checkChoice(this)">have lost you too</span><span class="choice" data-correct="will never be with you" onclick="checkChoice(this)">should be with you</span></span> </div>
+</div>
+</div>
+
+
+
+<script>
+  function checkChoice(el) {
+    const correct = el.getAttribute("data-correct").trim();
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    // Сброс классов
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none"; // блокируем после выбора
+    });
+
+    // Подсветка правильного и выбранного
+    siblings.forEach(sib => {
+      if (sib.textContent.trim() === correct) {
+        sib.classList.add("correct");
+      }
+    });
+
+    if (el.textContent.trim() !== correct) {
+      el.classList.add("incorrect");
+    }
+  }
+
+  function showTranslation() {
+    alert("Translation:\nMy life is brilliant\nMy love is pure\nI saw an angel...\nI will never be with you.");
+  }
+
+  function showDiscussion() {
+    alert(`Discussion Questions:
+1. What emotions does this song evoke in you?
+2. Do you think the narrator truly loved the girl?
+3. Is the experience described relatable?
+4. Why do you think this song became a global hit?
+5. What does the song say about fleeting moments and missed chances?`);
+  }
+</script>
+</html>
