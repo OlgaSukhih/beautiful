@@ -112,24 +112,15 @@
     Your browser does not support the audio element.
   </audio>
 
-  <div class="lyrics-container">
-    <img class="girl-img" src="girl.png" alt="girl">
-    <div class="lips">
-      <script>
-        for (let i = 0; i < 20; i++) {
-          document.write('<img src="lips.png" alt="lips">');
-        }
-      </script>
-    </div>
   <div class="lyrics">
   <div class="line">My life is brilliant</div>
   <div class="line">My love is pure</div>
   <div class="line">
     I
     <span class="options">
-      <span class="choice" data-correct="I saw an angel" onclick="checkChoice(this)">saw an angel</span>
-      <span class="choice" data-correct="I saw an angel" onclick="checkChoice(this)">met a devil</span>
-      <span class="choice" data-correct="I saw an angel" onclick="checkChoice(this)">found a mirror</span>
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">saw an angel</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">met a devil</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">found a mirror</span>
     </span>
   </div>
   <div class="line">Of that I'm sure</div>
@@ -137,21 +128,69 @@
   <div class="line">
     She was
     <span class="options">
-      <span class="choice" data-correct="with another man" onclick="checkChoice(this)">with her friend</span>
-      <span class="choice" data-correct="with another man" onclick="checkChoice(this)">with another man</span>
-      <span class="choice" data-correct="with another man" onclick="checkChoice(this)">alone</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">with her friend</span>
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">with another man</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">alone</span>
     </span>
   </div>
   <div class="line">But I won't lose no sleep on that</div>
   <div class="line">
     'Cause
     <span class="options">
-      <span class="choice" data-correct="I've got a plan" onclick="checkChoice(this)">I've got a plan</span>
-      <span class="choice" data-correct="I've got a plan" onclick="checkChoice(this)">I'm walking away</span>
-      <span class="choice" data-correct="I've got a plan" onclick="checkChoice(this)">it's not my day</span>
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">I've got a plan</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">I'm walking away</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">it's not my day</span>
     </span>
   </div>
 </div>
+
+<script>
+  function checkChoice(el) {
+    const isCorrect = el.getAttribute("data-correct") === "true";
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none"; // блокируем повторные клики
+    });
+
+    if (isCorrect) {
+      el.classList.add("correct");
+    } else {
+      el.classList.add("incorrect");
+      siblings.forEach(sib => {
+        if (sib.getAttribute("data-correct") === "true") {
+          sib.classList.add("correct");
+        }
+      });
+    }
+  }
+</script>
+
+
+<script>
+  function checkChoice(el) {
+    const isCorrect = el.getAttribute("data-correct") === "true";
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none"; // блокируем повторные клики
+    });
+
+    if (isCorrect) {
+      el.classList.add("correct");
+    } else {
+      el.classList.add("incorrect");
+      siblings.forEach(sib => {
+        if (sib.getAttribute("data-correct") === "true") {
+          sib.classList.add("correct");
+        }
+      });
+    }
+  }
+</script>
+
 
 <script>
   function checkChoice(el) {
