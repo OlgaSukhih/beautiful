@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>They Don't Care About Us — Listen & Understand</title>
+  <title>You're Beautiful — Listen & Sing</title>
   <style>
     body {
       background-color: #1b1b2f;
@@ -51,17 +52,19 @@
       width: 140px;
       height: 700px;
     }
+    .lips img {
+      width: 36px;
+      margin: 4px;
+    }
     .line {
       margin-bottom: 24px;
       font-size: 1.2em;
-      text-align: center;
     }
     .options {
       display: inline-flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-left: 10px;
-      justify-content: center;
     }
     .choice {
       background-color: #2f2f3d;
@@ -101,101 +104,219 @@
   </style>
 </head>
 <body>
-  <h1>They Don't Care About Us</h1>
+  <h1>Listen & Sing</h1>
   <h2><a href="https://t.me/joinandgetinspired" target="_blank">Join&GetInspired</a></h2>
 
   <audio controls>
-    <source src="/mnt/data/They Don't Care About Us.mp3" type="audio/mp3">
+    <source src="audio.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
-  <div class="lyrics-container">
-    <img class="girl-img" src="/mnt/data/20250509_1525_Человек в шляпе_remix_01jtt96mkbf5psd7cr0jy05khq-Photoroom.png" alt="Hat man" />
-    
-    <div class="line">
-      Skin head,
-      <span class="options">
-        <span class="choice" data-correct="true" onclick="checkChoice(this)">dead head</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">red head</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">big head</span>
-      </span>
-    </div>
-
-    <div class="line">Everybody gone bad</div>
-
-    <div class="line">
-      Situation,
-      <span class="options">
-        <span class="choice" data-correct="true" onclick="checkChoice(this)">aggravation</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">celebration</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">invitation</span>
-      </span>
-    </div>
-
-    <div class="line">Everybody allegation</div>
-
-    <div class="line">
-      In the suite, on the
-      <span class="options">
-        <span class="choice" data-correct="true" onclick="checkChoice(this)">news</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">roof</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">bus</span>
-      </span>
-    </div>
-
-    <div class="line">Everybody dog food</div>
-
-    <div class="line">
-      Bang bang, shot
-      <span class="options">
-        <span class="choice" data-correct="true" onclick="checkChoice(this)">dead</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">glass</span>
-        <span class="choice" data-correct="false" onclick="checkChoice(this)">gun</span>
-      </span>
-    </div>
-
-    <div class="line">Everybody's gone mad</div>
+  <div class="lyrics">
+  <div class="line">My life is brilliant</div>
+  <div class="line">My love is pure</div>
+  <div class="line">
+    I
+    <span class="options">
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">saw</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">met</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">kissed</span>
+    </span> an angel
   </div>
-
-  <div class="buttons">
-    <button onclick="showTranslation()">Translation</button>
-    <button onclick="showDiscussion()">Discussion</button>
+  <div class="line">Of that I'm sure</div>
+  <div class="line">She smiled at me on the subway</div>
+  <div class="line">
+    She was with
+    <span class="options">
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">another</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">handsome</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">tall</span>
+    </span> man
   </div>
+  <div class="line">But I won't lose no sleep on that</div>
+  <div class="line">
+    'Cause I've
+    <span class="options">
+      <span class="choice" data-correct="true" onclick="checkChoice(this)">got</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">lost</span>
+      <span class="choice" data-correct="false" onclick="checkChoice(this)">found</span>
+    </span> a plan
+  </div>
+</div>
 
-  <script>
-    function checkChoice(el) {
-      const isCorrect = el.getAttribute("data-correct") === "true";
-      const siblings = el.parentElement.querySelectorAll(".choice");
+<style>
+  .line {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .options {
+    display: inline-flex;
+    gap: 10px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .choice {
+    background-color: #2f2f3d;
+    color: #ffffff;
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .choice:hover {
+    background-color: #3f3f50;
+  }
+  .choice.correct {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+  }
+  .choice.incorrect {
+    background-color: #c62828;
+    border-color: #c62828;
+  }
+</style>
 
+<script>
+  function checkChoice(el) {
+    const isCorrect = el.getAttribute("data-correct") === "true";
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none";
+    });
+
+    if (isCorrect) {
+      el.classList.add("correct");
+    } else {
+      el.classList.add("incorrect");
       siblings.forEach(sib => {
-        sib.classList.remove("correct", "incorrect");
-        sib.style.pointerEvents = "none";
+        if (sib.getAttribute("data-correct") === "true") {
+          sib.classList.add("correct");
+        }
       });
+    }
+  }
+</script>
 
-      if (isCorrect) {
-        el.classList.add("correct");
-      } else {
-        el.classList.add("incorrect");
-        siblings.forEach(sib => {
-          if (sib.getAttribute("data-correct") === "true") {
-            sib.classList.add("correct");
-          }
-        });
+
+<script>
+  function checkChoice(el) {
+    const isCorrect = el.getAttribute("data-correct") === "true";
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none"; // блокируем повторные клики
+    });
+
+    if (isCorrect) {
+      el.classList.add("correct");
+    } else {
+      el.classList.add("incorrect");
+      siblings.forEach(sib => {
+        if (sib.getAttribute("data-correct") === "true") {
+          sib.classList.add("correct");
+        }
+      });
+    }
+  }
+</script>
+
+
+<script>
+  function checkChoice(el) {
+    const correct = el.getAttribute("data-correct").trim();
+    const siblings = el.parentElement.querySelectorAll(".choice");
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "auto";
+    });
+    siblings.forEach(sib => {
+      if (sib.textContent.trim() === correct) {
+        sib.classList.add("correct");
       }
+    });
+    if (el.textContent.trim() !== correct) {
+      el.classList.add("incorrect");
     }
+    siblings.forEach(sib => sib.style.pointerEvents = "none");
+  }
+</script>
 
-    function showTranslation() {
-      alert("Перевод:\nСкинхеды, мертвецы\nВсе сошли с ума\nСитуация, раздражение\nВсе кого-то обвиняют\nВ номере, в новостях\nВсе — как собачья еда\nВыстрел — убит\nВсе сошли с ума");
-    }
+<style>
+  .line {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+  .options {
+    display: inline-flex;
+    gap: 10px;
+    margin-left: 10px;
+    flex-wrap: wrap;
+  }
+  .choice {
+    background-color: #2f2f3d;
+    color: #ffffff;
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 6px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .choice:hover {
+    background-color: #3f3f50;
+  }
+  .choice.correct {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+  }
+  .choice.incorrect {
+    background-color: #c62828;
+    border-color: #c62828;
+  }
+</style>
 
-    function showDiscussion() {
-      alert(`Discussion Questions:
-1. What social issues are mentioned in this song?
-2. How does the artist express frustration or anger?
-3. Which line do you find the most powerful and why?
-4. How does this song relate to news or reality today?
-5. What is the main message of the chorus?`);
+
+<script>
+  function checkChoice(el) {
+    const correct = el.getAttribute("data-correct").trim();
+    const siblings = el.parentElement.querySelectorAll(".choice");
+
+    // Сброс классов
+    siblings.forEach(sib => {
+      sib.classList.remove("correct", "incorrect");
+      sib.style.pointerEvents = "none"; // блокируем после выбора
+    });
+
+    // Подсветка правильного и выбранного
+    siblings.forEach(sib => {
+      if (sib.textContent.trim() === correct) {
+        sib.classList.add("correct");
+      }
+    });
+
+    if (el.textContent.trim() !== correct) {
+      el.classList.add("incorrect");
     }
-  </script>
-</body>
+  }
+
+  function showTranslation() {
+    alert("Translation:\nMy life is brilliant\nMy love is pure\nI saw an angel...\nI will never be with you.");
+  }
+
+  function showDiscussion() {
+    alert(`Discussion Questions:
+1. What emotions does this song evoke in you?
+2. Do you think the narrator truly loved the girl?
+3. Is the experience described relatable?
+4. Why do you think this song became a global hit?
+5. What does the song say about fleeting moments and missed chances?`);
+  }
+</script>
 </html>
